@@ -47,6 +47,12 @@ namespace DatabaseFirstASPCore6.Controllers
         // GET: Home/Create
         public IActionResult Create()
         {
+            List<SelectListItem> Gender = new()
+            {
+                new SelectListItem { Value = "Male", Text = "Male"},
+                new SelectListItem { Value = "Female", Text = "Female"}
+            };
+            ViewBag.Gender = Gender;
             return View();
         }
 
@@ -69,6 +75,13 @@ namespace DatabaseFirstASPCore6.Controllers
         // GET: Home/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            List<SelectListItem> Gender = new()
+            {
+                new SelectListItem { Value = "Male", Text = "Male"},
+                new SelectListItem { Value = "Female", Text = "Female"}
+            };
+            ViewBag.Gender = Gender;
+
             if (id == null || _context.Students == null)
             {
                 return NotFound();
